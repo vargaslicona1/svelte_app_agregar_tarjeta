@@ -1,68 +1,25 @@
-*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+ 
 
----
+# svelte app - Registro de medio de pago 
 
-# svelte app
+Ejercicio / reto para RetoCoderosJunio2019
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
+## Validación
+Ya que Svelte reconoce las llaves '{}' para el 'bindeo' de las propiedades y no pueden ser usadas para definir una expresión regular directamente sobre el html: desde js se agregan las propiedades pattern para la validación de números. Se hace uso del api de HTML5 de validación para verificar el formulario.
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+## Librerias externas
+Se hace uso de SweetAlert para enviar mensajes al usuario
 
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
+## Tarjetas y números válidos
+  
+JCB ^(?:2131|1800|35)[0-9]{0,}$ Inicia con: 2131, 1800, 35 (3528-3589)
 
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+American Express ^3[47][0-9]{0,}$ Inicia con: 34, 37
 
+Diners Club ^3(?:0[0-59]{1}|[689])[0-9]{0,}$ Inicia con: 300-305, 309, 36, 38-39
 
-## Get started
+Visa ^4[0-9]{0,}$ Inicia con: 4
 
-Install the dependencies...
+MasterCard ^(5[1-5]|222[1-9]|22[3-9]|2[3-6]|27[01]|2720)[0-9]{0,}$ Inicia con: 2221-2720, 51-55
 
-```bash
-cd svelte-app
-npm install
-```
-
-...then start [Rollup](https://rollupjs.org):
-
-```bash
-npm run dev
-```
-
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
-
-
-## Deploying to the web
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-now
-```
-
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public
-```
+Maestro ^(5[06789]|6)[0-9]{0,}$ Rango de 60-69 y desde 56
